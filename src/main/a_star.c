@@ -16,10 +16,13 @@ add(Location pos){
             //copy down
             if(nav_stack_size == nav_stack_current_size){
                 nav_stack_size *= 2;
-                nav_stack_current_size++;
                 //realloc;
             }
-            for(j=i; j<nav_stack_current_size; j++)
+            nav_stack_current_size++;
+            //for(j=i; j<nav_stack_current_size; j++)
+            for(j=nav_stack_current_size; j>i; j--){
+                nav_stack[j] = nav_stack[j-1];
+            }
             //insert
             nav_stack[i] = pos;
             return;
