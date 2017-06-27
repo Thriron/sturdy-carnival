@@ -15,7 +15,7 @@
 #define RIGHT 0x02
 uint8_t map[MAP_SIZE][MAP_SIZE];
 
-int init(){
+int map_init(){
     memset(map, 0, sizeof(map));
     //initialize walls
     for(int i=0; i<MAP_SIZE; i++){
